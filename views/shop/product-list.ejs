@@ -25,14 +25,20 @@
                         
                                 <div class="content"><%= product.description %></div>
                             </div>
+
+                            
                             <footer class="card-footer">
                                 <a class="card-footer-item" href="/products/<%= product.id %>" >Details</a>
-                                <a class="card-footer-item" href="/edit-product/<%= product.id %>?edit=true">Edit</a>
-                                <form action="/delete-product" method="POST">
+
+                                <!-- only for admin to see -->
+                                <a class="card-footer-item" href="/admin/edit-product/<%= product.id %>?edit=true">Edit</a>
+                                <form action="/admin/delete-product" method="POST">
                                     <input type="hidden" name="productId" value="<%= product.id %>">
                                     <button type="submit" class="card-footer-item">Delete</button>
                                 </form>
+                                <!-- only for admin to see -->
                             </footer>
+                            
                         </div>
                     </div>
                 <% } %>
